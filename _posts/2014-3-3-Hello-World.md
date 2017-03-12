@@ -21,4 +21,4 @@ int main( void ){
 }
 {% endhighlight %}
 
-latex test \( y = x^2 \)
+latex test $$ y = x^2 $$ .
