@@ -19,3 +19,5 @@ int main( void ){
   return 0;
 }
 {% end highlight %}
+
+Here is a latex formula $y = x^2 \hbox{ when $x > 2$}$ 
