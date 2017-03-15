@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+I love my code. They are my children. 
+But if you have suggestions to make them better, please please let me know.
 
 ### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+yren2 [at] vt [dot] edu
