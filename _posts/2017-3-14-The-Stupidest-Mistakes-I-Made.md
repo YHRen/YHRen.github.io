@@ -6,13 +6,10 @@ date: 2017-03-14
 tag: [fun]
 ---
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+Here is a list of the stupidest mistakes I have made so far. 
+So, from time to time, I can look at them and laugh at myself. 😂
 
 `title += "So Far..."`
-
-Here is a list of the stupidest mistakes I have made so far. 
-So, from time to time, I can look at them and laugh at myself. :P
-
 
 **NOTE: all codes are mistakes!**
 
@@ -20,7 +17,7 @@ So, from time to time, I can look at them and laugh at myself. :P
 {% highlight cpp %}
 char c = '1';
 int  a = int(c);
-assert( a != 1 );
+assert( a == 1 ); // NO!
 {% endhighlight %}
 
 ### How to give a pointer a `new` content in C++
@@ -29,7 +26,55 @@ int * ptr = nullptr;
 void foo( int* ptr ){
   ptr = new int(1);
 }
-assert( ptr == nullptr );
+assert( *ptr == 1 ); // NO!
+{% endhighlight %}
+
+### How to grow a vector and iterate it at the same time in C++
+{% highlight cpp %}
+// generate all products of 2^a \times 3^b
+vector<int> v = {1};
+int p = 2, q = 3, t = 30;
+auto pitr = v.begin();
+auto qitr = v.begin();
+while( t -- ){
+  int x = *pitr*p, y = *qitr*q;
+  v.push_back( min( x,y ) );
+  if( x < y ){
+    ++ pitr;
+  }else if ( x > y ) {
+    ++ qitr;
+  }else{
+    ++ pitr;
+    ++ qitr;
+  }
+}
+assert( v[3] == 4 && v[7] == 12 ); // No!
 {% endhighlight %}
 
 
+
+### Solutions
+If you have not figure it out:
+
+* C++, like C, the conversion is a change of interpretation of the same segment
+  of memory. C is using ASCII, a 7-bits table. Every char has 8-bits, or
+  2-hexadecimal. For example, char '0' is `30` in hex, which means three 16s.
+  So it is 48 in `int`. The right way to convert a char from digit to int is by
+  the difference of `c - '0'`.
+
+* This is one is a funny one. The function passes a copy of the pointer, a pointer
+  points to whatever memory address the original pointer pointing to. The
+  memory allocated within the function is pointed by this temporary pointer. After
+  the function ends, this temporary pointer is destroyed, and the original pointer 
+  left unchanged. Worst of all, the allocated memory can never be deallocated, classic
+  memory leak. The right way is to pass the pointer by reference: `foo( int*& ptr )`;
+
+* When vector is growing, it will reallocate new memory, probably at some other
+  place, once its size reaches any power of 2. This will make iterators,
+  essentially a pointer, invalid. The right way is either to `reserve` enough
+  space at the beginning, `v.reserve(50)`.  If the size is unknown at the
+  beginning, probably the best practice is to use indices.  Note that, a
+  similar issue also occurs when one delete elements while traversing a binary
+  tree. I think C++11 provides a way to solve it as `erase` method returns an
+  iterator.  The BGL, boost graph library, also makes vertex (edge) iterators
+  invalid if the graph topology changes. Same idea.

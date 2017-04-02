@@ -1,4 +1,5 @@
 #
+
 # This file contains configuration flags to customize your site
 #
 
@@ -14,6 +15,14 @@ avatar: https://avatars1.githubusercontent.com/u/2334880?v=3&u=9524db56cd289c9da
 #
 # Flags below are optional
 #
+
+## Tagging // does not work
+#tag_page_layout: tag_page
+#tag_page_dir: tag
+#tag_permalink_style: pretty
+##ignored_tags: [div2, level2, leve3]
+#tag_page_data:
+#  sitemap: false
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -76,6 +85,7 @@ sass:
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+
 
 # Exclude these files from your production _site
 exclude:

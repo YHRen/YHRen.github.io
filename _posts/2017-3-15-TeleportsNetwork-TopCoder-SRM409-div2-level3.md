@@ -3,7 +3,7 @@ layout: post
 title: TeleportsNetwork topcoder SRM409 div2 level3
 published: true
 date: 2017-03-15
-tag: [topcoder, div2, level3, graph algorithm]
+tag: [topcoder, div2, level3, graph]
 ---
 
 ### Introduction
