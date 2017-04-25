@@ -93,4 +93,4 @@ If you have not figure it out:
   invalid if the graph topology changes. Same idea.
 
 * Before assign the `ptr` to the new address, we need to deallocate its memory.
-  `if (allocated) delete [] ptr; ptr = rhs.ptr;`
+  `if (allocated) delete [] ptr; ptr = rhs.ptr;` I thank my mentor to point it out.
