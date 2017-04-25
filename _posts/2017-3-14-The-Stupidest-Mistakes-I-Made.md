@@ -3,6 +3,7 @@ layout: post
 title: The Stupidest Miskates I Have Made
 published: true
 date: 2017-03-14
+update: 2017-04-25
 tag: [fun]
 ---
 
@@ -51,7 +52,19 @@ while( t -- ){
 assert( v[3] == 4 && v[7] == 12 ); // No!
 {% endhighlight %}
 
-
+### How to use rval-reference in C++ to avoid copying
+{% highlight cpp %}
+// generate all products of 2^a \times 3^b
+struct BitArray{
+  uint32_t* ptr; // stores bits
+  BitArray( size_t N ){ ptr = new uint31_t[N]; }
+  BitArray & operator=(BitArray && rhs){ // rval-ref
+    ptr = rhs.ptr; // move the ownership of the allocated chunk to avoid copy
+    rhs.ptr = NULL; // so it does not deallocate the chunk
+  }
+};
+/* can you spot a memory leak? */
+{% endhighlight %}
 
 ### Solutions
 If you have not figure it out:
@@ -78,3 +91,6 @@ If you have not figure it out:
   tree. I think C++11 provides a way to solve it as `erase` method returns an
   iterator.  The BGL, boost graph library, also makes vertex (edge) iterators
   invalid if the graph topology changes. Same idea.
+
+* Before assign the `ptr` to the new address, we need to deallocate its memory.
+  `if (allocated) delete [] ptr; ptr = rhs.ptr;`
