@@ -54,7 +54,6 @@ assert( v[3] == 4 && v[7] == 12 ); // No!
 
 ### How to use rval-reference in C++ to avoid copying
 {% highlight cpp %}
-// generate all products of 2^a \times 3^b
 struct BitArray{
   uint32_t* ptr; // stores bits
   BitArray( size_t N ){ ptr = new uint31_t[N]; }

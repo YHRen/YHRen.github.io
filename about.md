@@ -4,8 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I love my code. They are my children. 
-But if you have suggestions to make them better, please please let me know.
+I guess this is a place to share interesting things.
 
-### Contact me
+### Contact:
 yren2 [at] vt [dot] edu
