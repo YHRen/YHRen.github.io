@@ -13,15 +13,15 @@ of colors.  In C++, we usually can declare `enum class Color { Red, Green, Blue
 anything else. For example, if we want to print `"Red"` for `Color::Red`, we have to
 write another function using `switch` statement, *somewhere else*.  When we
 want to add a new color, we have to change every places we are using `switch`.
-This is obviously an anti-pattern. Sometime, we also want to find how many colors in total, 
-and maybe even iterating through them. None of these are supported by C++
+This is obviously an anti-pattern. Occasionally, we want to find how many colors in total, 
+and maybe even want to iterate through them. None of these are supported by C++
 `enum`.  In this blog, I want to introduce the **Enum Pattern** in C++, which
-supports `switch` and encapsulated member functions, similar to the Enum Class
+supports `switch` and constains encapsulated member functions, similar to the Enum Class
 in Java. The idea came from this stackoverflow
 [post](https://stackoverflow.com/questions/1965249/how-to-write-a-java-enum-like-class-with-multiple-data-fields-in-c).
 
 ### The Code
-```
+``` cpp
 class GuitarBrand { // Enum Class Pattern
  public:
   static const GuitarBrand FENDER;
@@ -67,6 +67,6 @@ The `static int sz` tracks the number of different `GuitarBrand` instances (type
 also assign a proper `index` for each type of guitar brand.
 If we like to provide the functionality of iteration of all guitar brands, we
 could also add a `vector<GuitarBrand*>` as private member and `push_back(this)`
-for each guitar brand construction. The `int` conversion function enable us to use 
-`switch` statement on `GuitarBrand` objects.
+during each guitar brand construction. The `int` conversion function enables the use 
+of `switch` statement on `GuitarBrand` objects.
 
