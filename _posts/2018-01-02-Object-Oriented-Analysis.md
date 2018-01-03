@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Object-Oriented Analysis and Design Principles
+title: Object-Oriented Analysis
 published: true
 date: 2018-01-02
 tag: [object-oriented]
@@ -10,8 +10,8 @@ tag: [object-oriented]
 Object-oriented analysis is a systematic way to tackle real-world problems using a software 
 solution. In this blog, I would like to introduce a step-by-step procedure on
 how to analyze a real world problem by understanding it, breaking it into small
-pieces and solving them one by one.  
-I learned most of it from [this](https://www.amazon.com/Head-First-Object-Oriented-Analysis-Design/dp/0596008678/ref=sr_1_1?s=books&ie=UTF8&qid=1514921957&sr=1-1&keywords=head+first+Object-oriented+analysis+and+design)
+pieces and solving them one by one. I learned most of it from
+[this](https://www.amazon.com/Head-First-Object-Oriented-Analysis-Design/dp/0596008678/ref=sr_1_1?s=books&ie=UTF8&qid=1514921957&sr=1-1&keywords=head+first+Object-oriented+analysis+and+design)
 book and I highly recommend it.
 
 ### How to Analyze a Problem
