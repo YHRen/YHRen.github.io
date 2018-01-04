@@ -49,7 +49,7 @@ class GuitarBrand { // Enum Class Pattern
  public:
   string get_name(void) const { return this->name; }
   int get_enum_size(void) const { return this->sz; }
-  const operator int(void) const { return this->index; } 
+  operator int(void) const { return this->index; } 
 };
 int GuitarBrand::sz = 0;
 const GuitarBrand GuitarBrand::FENDER("Fender");
@@ -70,3 +70,39 @@ could also add a `vector<GuitarBrand*>` as private member and `push_back(this)`
 during each guitar brand construction. The `int` conversion function enables the use 
 of `switch` statement on `GuitarBrand` objects.
 
+The following is a sample usage of the `GuitarBrand` enum class.
+
+``` cpp
+class Guitar {
+public:
+  const GuitarBrand*    brand;
+  public:
+  void setBuilder( const GuitarBrand & b) { brand = &b ; }
+  string getBrand() const {
+    return brand->get_name();
+  }
+};
+
+int main( int argc, char * argv[] ){
+  Guitar g;
+  g.setBuilder(GuitarBrand::PRS);
+  cout << "PRS = " << GuitarBrand::PRS << '\n';
+  cout << g.getBrand() << '\n';
+  GuitarBrand gb ( GuitarBrand::PRS );  
+  gb = GuitarBrand::GIBSON; 
+  cout << GuitarBrand::get_enum_size() << '\n';
+  switch( gb ){
+    case 0:
+      cout << "FENDER\n";
+      break;
+    case 1:
+      cout << "GIBSON\n";
+      break;
+    case 2:
+      cout << "PRS\n";
+      break;
+    default:
+      cout << "UNKNOWN\n";
+  }
+  return 0;
+}
