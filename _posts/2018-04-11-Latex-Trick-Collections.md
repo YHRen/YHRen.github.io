@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Latex Trick Collections
-published: true
+published: false
 date: 2018-04-11
 tag: [latex]
 ---
@@ -24,7 +24,7 @@ words we have put (`-inc -total` is for counting the included files in the main
 `tex` file).
 
 ``` bash
-fn = epiSen_main
+fn = file_name
 exe = pdflatex
 
 .PHONY : all compile open count clean purge
