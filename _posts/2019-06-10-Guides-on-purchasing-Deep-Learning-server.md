@@ -7,7 +7,9 @@ date: 2019-06-10
 tag: [hardware] [deep-learning]
 ---
 
-Choosing the right GPU server for deep learning is the first problem presented to the research teams among industry and academia. 
+## Introduction
+Choosing the right GPU server for deep learning is the first problem presented
+to the research teams among industry and academia. 
 This article is to introduce a few tips in picking the right hardware for your team.
 
 If the purpose of the server is mainly for development, a RTX server would be the most cost effective. 
