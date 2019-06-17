@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Guides On Choosing Deep Learning Server  
-author: Yihui (Ray) Ren
 published: true
 date: 2019-06-10
-tag: [hardware] [deep-learning]
+tag: [hardware, deep-learning]
 ---
 
 ## Introduction
